@@ -43,8 +43,22 @@ rojo --version
 
 ## 2. Install the Rojo Studio plugin
 
-In Roblox Studio: **Toolbox → Creator Store → Plugins**, search "Rojo", install the
-official one by `rojo-rbx`. This is the half that receives the sync.
+This is the half that receives the sync. Easiest route, from the repo directory:
+
+```bash
+rojo plugin install
+```
+
+That pulls the plugin matching your pinned CLI version, so the two can't drift.
+
+If you'd rather install by hand: **Toolbox → Creator Store → Plugins**, search "Rojo",
+and take the one published by the group **Rojo Foundation** — asset ID
+**13916111004**, which is what the [official install docs](https://rojo.space/docs/v7/getting-started/installation/)
+link to. Verify the ID rather than the publisher name; names can be impersonated and a
+Studio plugin runs with full access to your place.
+
+(`rojo-rbx` is the GitHub organization, not the Roblox publisher. Different names for
+the same project.)
 
 ---
 

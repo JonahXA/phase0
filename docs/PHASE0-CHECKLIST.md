@@ -48,9 +48,23 @@ it, so kick it off and carry on.
         → PATH hasn't picked up `~/.rokit/bin`. Close every terminal and open a
           fresh one.
 
-- [ ] **Install the Rojo Studio plugin.**
-      Studio → **Toolbox** → **Creator Store** → filter to **Plugins** → search "Rojo"
-      → install the one by **rojo-rbx**.
+- [ ] **Install the Rojo Studio plugin.** Preferred, from the repo directory:
+
+      rojo plugin install
+
+      This installs the plugin build that matches your CLI exactly (7.7.0), which
+      rules out version-mismatch sync bugs and avoids the Creator Store entirely.
+      Restart Studio afterwards.
+
+      Manual alternative — Studio → **Toolbox** → **Creator Store** → **Plugins** →
+      search "Rojo". The legitimate one is published by the group **Rojo Foundation**
+      and is asset ID **13916111004**.
+
+      **Match the asset ID, not the name.** Publisher names are trivially
+      impersonated, and a Studio plugin runs with full access to your place — it can
+      read source, inject scripts, and phone home. The official docs at
+      <https://rojo.space/docs/v7/getting-started/installation/> vouch for that ID.
+
       It appears under the **Plugins** tab in the ribbon once installed.
 
 ---
