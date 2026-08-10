@@ -147,7 +147,14 @@ local function loadProfile(player: Player): any?
 			return migrate(result)
 		end
 
-		warn(string.format("[DataService] load attempt %d for %s failed: %s", attempt, player.Name, tostring(result)))
+		warn(
+			string.format(
+				"[DataService] load attempt %d for %s failed: %s",
+				attempt,
+				player.Name,
+				tostring(result)
+			)
+		)
 		if attempt < Config.Data.MaxLoadRetries then
 			task.wait(delaySeconds)
 			delaySeconds *= 2

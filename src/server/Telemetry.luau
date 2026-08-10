@@ -111,7 +111,12 @@ function Telemetry.economy(
 	end)
 end
 
-function Telemetry.custom(player: Player, eventName: string, value: number?, fields: { [string]: any }?)
+function Telemetry.custom(
+	player: Player,
+	eventName: string,
+	value: number?,
+	fields: { [string]: any }?
+)
 	safe("custom:" .. eventName, function()
 		AnalyticsService:LogCustomEvent(player, eventName, value or 1, fields)
 	end)

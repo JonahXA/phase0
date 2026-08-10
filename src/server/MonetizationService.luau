@@ -72,7 +72,14 @@ local function checkDoubleCoins(player: Player)
 			owns = result
 			break
 		end
-		warn(string.format("[Monetization] pass check %d failed for %s: %s", attempt, player.Name, tostring(result)))
+		warn(
+			string.format(
+				"[Monetization] pass check %d failed for %s: %s",
+				attempt,
+				player.Name,
+				tostring(result)
+			)
+		)
 		task.wait(attempt)
 	end
 

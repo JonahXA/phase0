@@ -75,7 +75,12 @@ end
 	what makes the Creator Dashboard economy chart readable later. If you add a
 	new way to gain or spend coins, give it a distinct reason string.
 ]]
-function EconomyService.addCoins(player: Player, amount: number, reason: string, sku: string?): boolean
+function EconomyService.addCoins(
+	player: Player,
+	amount: number,
+	reason: string,
+	sku: string?
+): boolean
 	local profile = DataService.get(player)
 	if not profile then
 		return false
@@ -117,7 +122,9 @@ function EconomyService.handleClick(player: Player)
 		if count >= Config.Economy.SuspiciousRejectThreshold and not suspicionLogged[player] then
 			suspicionLogged[player] = true
 			Telemetry.custom(player, "SuspiciousClickRate", count)
-			warn(string.format("[Economy] %s exceeded click rate limit %d times", player.Name, count))
+			warn(
+				string.format("[Economy] %s exceeded click rate limit %d times", player.Name, count)
+			)
 		end
 		return
 	end

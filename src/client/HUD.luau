@@ -48,8 +48,8 @@ function HUD.new()
 	-- Coin counter
 	local counter = Instance.new("TextLabel")
 	counter.Name = "Coins"
-	counter.Size = UDim2.new(0, 240, 0, 56)
-	counter.Position = UDim2.new(0, 16, 0, 16)
+	counter.Size = UDim2.fromOffset(240, 56)
+	counter.Position = UDim2.fromOffset(16, 16)
 	counter.BackgroundColor3 = Color3.fromRGB(24, 24, 30)
 	counter.BackgroundTransparency = 0.15
 	counter.BorderSizePixel = 0
@@ -64,8 +64,8 @@ function HUD.new()
 	-- Multiplier badge, hidden until the pass is owned
 	local badge = Instance.new("TextLabel")
 	badge.Name = "Multiplier"
-	badge.Size = UDim2.new(0, 110, 0, 32)
-	badge.Position = UDim2.new(0, 16, 0, 80)
+	badge.Size = UDim2.fromOffset(110, 32)
+	badge.Position = UDim2.fromOffset(16, 80)
 	badge.BackgroundColor3 = Color3.fromRGB(46, 120, 60)
 	badge.BorderSizePixel = 0
 	badge.Text = "2x ACTIVE"
@@ -81,7 +81,7 @@ function HUD.new()
 	self.clickButton = button(
 		"CLICK",
 		Color3.fromRGB(232, 172, 32),
-		UDim2.new(0, 200, 0, 90),
+		UDim2.fromOffset(200, 90),
 		UDim2.new(0.5, -100, 1, -130)
 	)
 	self.clickButton.Parent = gui
@@ -90,14 +90,14 @@ function HUD.new()
 	self.shopToggle = button(
 		"SHOP",
 		Color3.fromRGB(58, 92, 190),
-		UDim2.new(0, 120, 0, 48),
+		UDim2.fromOffset(120, 48),
 		UDim2.new(1, -136, 0, 16)
 	)
 	self.shopToggle.Parent = gui
 
 	local panel = Instance.new("Frame")
 	panel.Name = "ShopPanel"
-	panel.Size = UDim2.new(0, 300, 0, 230)
+	panel.Size = UDim2.fromOffset(300, 230)
 	panel.Position = UDim2.new(1, -316, 0, 76)
 	panel.BackgroundColor3 = Color3.fromRGB(24, 24, 30)
 	panel.BackgroundTransparency = 0.08
@@ -109,7 +109,7 @@ function HUD.new()
 
 	local title = Instance.new("TextLabel")
 	title.Size = UDim2.new(1, -20, 0, 34)
-	title.Position = UDim2.new(0, 10, 0, 10)
+	title.Position = UDim2.fromOffset(10, 10)
 	title.BackgroundTransparency = 1
 	title.Text = "Shop"
 	title.TextScaled = true
@@ -122,7 +122,7 @@ function HUD.new()
 		"2x Coins (Pass)",
 		Color3.fromRGB(46, 120, 60),
 		UDim2.new(1, -20, 0, 50),
-		UDim2.new(0, 10, 0, 52)
+		UDim2.fromOffset(10, 52)
 	)
 	self.buyPass.Parent = panel
 
@@ -130,7 +130,7 @@ function HUD.new()
 		"+100 Coins",
 		Color3.fromRGB(58, 92, 190),
 		UDim2.new(1, -20, 0, 50),
-		UDim2.new(0, 10, 0, 112)
+		UDim2.fromOffset(10, 112)
 	)
 	self.buy100.Parent = panel
 
@@ -138,7 +138,7 @@ function HUD.new()
 		"+500 Coins",
 		Color3.fromRGB(58, 92, 190),
 		UDim2.new(1, -20, 0, 50),
-		UDim2.new(0, 10, 0, 172)
+		UDim2.fromOffset(10, 172)
 	)
 	self.buy500.Parent = panel
 
