@@ -227,6 +227,13 @@ expected; it is not a broken payout.
       - [ ] The "2x Coins (Pass)" shop button disappears
       - [ ] Clicking now grants **2** coins per click instead of 1
 
+      > **You get exactly one attempt at the live-flip check.** It exercises
+      > `PromptGamePassPurchaseFinished`, which only fires on the purchase itself.
+      > Once you own the pass, every later join takes the `UserOwnsGamePassAsync`
+      > path instead, and you cannot un-own a pass to try again. So do not buy the
+      > pass outside the game before this step — if you do, the ownership path still
+      > gets verified but the live-flip path silently never runs.
+
 - [ ] Leave and rejoin. Balance and the 2x badge both persist.
 
 ### 4d. Confirm telemetry is actually arriving
