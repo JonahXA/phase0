@@ -131,9 +131,27 @@ Then **publish again** so the live place has the scripts.
 Studio ships an MCP server, which lets me inspect and edit your place directly rather
 than only writing files.
 
-In Studio: **Assistant Settings → MCP Servers → Enable Studio as MCP server**. Use
-**Quick connect** to pick Claude, or copy the JSON it displays into the project's
-`.mcp.json`. The server runs locally over stdio and only works while Studio is open.
+In Studio: open the **Assistant** panel → the **⋯** menu → **Manage MCP Servers** →
+turn on **Enable Studio as MCP server**. A green indicator with a connected-client
+count confirms it worked. The server runs locally over stdio and only works while
+Studio is open.
+
+**Quick connect** (in that same panel) lists clients it detects — Claude Desktop,
+Cursor, VS Code. Claude Code is configured by file instead, and this repo already
+ships it as [`.mcp.json`](../.mcp.json):
+
+```json
+{
+  "mcpServers": {
+    "Roblox_Studio": {
+      "command": "cmd.exe",
+      "args": ["/c", "%LOCALAPPDATA%\\Roblox\\mcp.bat"]
+    }
+  }
+}
+```
+
+Claude Code loads MCP servers at startup, so **restart it** after enabling the toggle.
 
 Rojo and MCP are complementary, and worth keeping both: **Rojo owns the source of
 truth** (text, git, reviewable diffs), **MCP is for inspection and one-off surgery**
