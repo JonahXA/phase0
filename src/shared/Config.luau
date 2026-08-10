@@ -27,18 +27,23 @@ Config.DataVersion = 1
 Config.PlayerDataStore = "PlayerData_v1"
 
 -- ============================================================
--- Monetization — FILL THESE IN
+-- Monetization
+--
+-- Live IDs for the EXP1 experience, universe 10673593342.
+-- All three are priced at 1 Robux so self-testing purchases costs nothing
+-- meaningful. Managed pricing is deliberately OFF on all of them — regional
+-- price optimization would make the purchase test non-deterministic.
 -- ============================================================
 
 Config.GamePasses = {
 	-- 2x coins on every earn, permanent.
-	DoubleCoins = 0, -- TODO: replace with your Game Pass ID
+	DoubleCoins = 1943641498,
 }
 
 Config.DeveloperProducts = {
 	-- One-time consumable coin grants.
-	Coins100 = 0, -- TODO: replace with your Developer Product ID
-	Coins500 = 0, -- TODO: replace with your Developer Product ID
+	Coins100 = 3700511457,
+	Coins500 = 3700519374,
 }
 
 -- How many coins each developer product grants. Keyed by the same names above.
