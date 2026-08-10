@@ -31,11 +31,12 @@ by default and purchases are inert until you set them.
 ## Layout
 
 ```
-src/shared/     Config, remote definitions, saved-data schema
-src/server/     DataService, EconomyService, MonetizationService, Telemetry, World
-src/client/     HUD and input forwarding
-docs/SETUP.md   Step-by-step from empty Studio to measured live experience
-docs/METRICS.md What to measure and the kill criteria
+src/shared/            Config, remote definitions, saved-data schema
+src/server/            DataService, EconomyService, MonetizationService, Telemetry, World
+src/client/            HUD and input forwarding
+docs/PHASE0-CHECKLIST.md  Ordered do-this-then-report-back list. Start here.
+docs/SETUP.md          Reference: empty Studio to measured live experience
+docs/METRICS.md        What to measure and the kill criteria
 ```
 
 ## The rule this repo is built around
