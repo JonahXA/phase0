@@ -78,8 +78,15 @@ it, so kick it off and carry on.
       Private matters: a half-built clicker picking up stray visits pollutes the very
       retention numbers this whole exercise exists to measure.
 
-- [ ] **Home → Game Settings → Security → enable "Enable Studio Access to API
-      Services".** Save.
+- [ ] **File → Experience Settings → Security → enable "Enable Studio Access to API
+      Services".** Then click **Save**.
+
+      Older guides and videos call this "Home → Game Settings". That dialog was
+      renamed to **Experience Settings** and moved under **File** — if you're hunting
+      the Home ribbon for it, that's why you can't find it.
+
+      If **Experience Settings** is greyed out or missing, you haven't published yet.
+      It configures a published experience, so do the publish step above first.
 
       This is the single most common way to lose an hour on this setup. Without it
       every DataStore call fails inside Studio and the failure looks like a code bug.
