@@ -69,15 +69,14 @@ the same project.)
 3. **File → Experience Settings → Security** → turn ON **Enable Studio Access to API
    Services** → **Save**. Without this, every DataStore call fails in Studio and you'll
    spend an hour debugging a setting.
-4. **File → Experience Settings → Options** → set **Enable Analytics** if it isn't
-   already.
-
 > Older guides say "Home → Game Settings". The dialog is now **Experience Settings**
 > under the **File** menu. If it's greyed out, publish the place first — it configures
 > a published experience, not a local file.
 
-> Analytics events only reach the dashboard from a **published** place. Play-testing
-> a local file produces nothing.
+**There is no analytics setting to enable.** Analytics needs no setup; it has a
+constraint instead: `AnalyticsService` events fire **only from the server, only in a
+published experience**. Studio playtests and client-side calls produce nothing. That
+is expected, not a fault — so don't go looking for a toggle to fix it.
 
 ---
 

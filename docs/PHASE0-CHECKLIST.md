@@ -132,6 +132,10 @@ Now verify each of these. **This is the actual test — don't skim it.**
 - [ ] Scan Output for anything red, or any warning starting `[DataService]`,
       `[Monetization]`, or `[Telemetry]`. Copy them if present.
 
+> **Expect zero analytics during Pass 1.** `AnalyticsService` only emits from the
+> server in a *published* experience — Studio playtests produce nothing, by design.
+> There is no setting to turn on. You verify telemetry in Pass 2, live.
+
 **Do not continue to Pass 2 until the balance survives a rejoin.**
 
 ---
@@ -189,6 +193,22 @@ expected; it is not a broken payout.
       - [ ] Clicking now grants **2** coins per click instead of 1
 
 - [ ] Leave and rejoin. Balance and the 2x badge both persist.
+
+### 4d. Confirm telemetry is actually arriving
+
+- [ ] Creator Dashboard → your experience → **Analytics**. Open the **Custom**,
+      **Funnel**, and **Economy** pages, and on each click **View Events** at the top.
+
+      That's a near-real-time feed of incoming events — use it rather than waiting on
+      the charts, which lag well behind.
+
+- [ ] Confirm you can see, roughly in order: `NewPlayer`, the `Onboarding` funnel
+      steps (Joined → DataLoaded → FirstClick → FirstShopOpen → FirstPurchase),
+      `PurchaseCompleted`, and `Coins` economy events tagged `ClickReward` and
+      `ProductPurchase`.
+
+- [ ] **Check `DataLoadFailed` is absent.** If it's firing, some players' progress is
+      silently vanishing and every retention number downstream is polluted.
 
 ---
 

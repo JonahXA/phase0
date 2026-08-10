@@ -34,8 +34,16 @@ Revenue per visit is a Phase 2 metric. Retention is the Phase 1 metric.
 all appear on the Creator Dashboard automatically for any published experience. Trust
 these for the headline numbers.
 
-**Custom events** (Analytics → Custom Events, ~1h ingest delay) exist to answer things
-the built-in charts can't segment:
+**Custom events** (Analytics → Custom Events) exist to answer things the built-in
+charts can't segment.
+
+> Verifying they arrive: don't wait on the charts, which lag. Each of the Economy,
+> Funnel, and Custom analytics pages has a **View Events** button at the top showing a
+> near-real-time feed of the most recent events. That is the tool for confirming
+> instrumentation works; the charts are for reading results once data accumulates.
+>
+> Nothing appears from a Studio playtest — events require a **published** experience
+> and fire **server-side only**.
 
 | Event | Why it's here |
 |---|---|
