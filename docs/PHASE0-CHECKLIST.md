@@ -166,12 +166,24 @@ Icons are required for both, max **512×512**, `.jpg`/`.png`/`.bmp`. Any square 
 - [ ] **Monetization → Passes → Create pass.** Name it "2x Coins", add an icon and
       description, pick a category, create.
 
-- [ ] **Set its price — this is a separate step.** Back on Monetization → Passes,
-      hover the pass → menu button → **Sales** → enable **Item for Sale** → price
-      **1** Robux → **Save Changes**.
+- [ ] **Set its price — a separate step, and the navigation is genuinely hidden.**
+
+      Open the pass, then click the **☰ hamburger at the top-left of the page**. That
+      expands a sidebar with **Basic Settings** and **Sales**. Choose **Sales** →
+      enable **Item for sale** → price **1** → **Save Changes**.
+
+      Or go straight there:
+      `/dashboard/creations/experiences/{universeId}/passes/{passId}/sales`
+
+      Roblox's own docs say to hover the pass and pick "Sales" from the ⋯ menu. That
+      is wrong as of Aug 2026 — that menu holds only Edit settings, Copy Pass ID, and
+      Copy Thumbnail ID. The sidebar is the only in-UI route.
 
       A pass that isn't explicitly put on sale cannot be purchased, and the failure is
       silent — it reads as a code bug.
+
+      If the save is rejected, check the pass has an **icon uploaded** under Basic
+      Settings.
 
 - [ ] **Monetization → Developer Products → Create developer product.** Make two,
       named "100 Coins" and "500 Coins". Unlike passes, **price is set at creation** —
