@@ -158,17 +158,26 @@ Now verify each of these. **This is the actual test — don't skim it.**
 
 ### 4a. Create the products
 
-Creator Dashboard → **Creations** → your experience → **Associated Items**.
+This happens on the **Creator Dashboard**, which is a website — not Roblox Studio.
+<https://create.roblox.com/dashboard/creations> → select your experience.
 
-- [ ] **Passes → Create Pass.** Name it "2x Coins". Any square image works as the icon.
-      After it's created, open it → **Sales** → enable **Item for Sale** → set price to
-      **1 Robux**.
+Icons are required for both, max **512×512**, `.jpg`/`.png`/`.bmp`. Any square image.
+
+- [ ] **Monetization → Passes → Create pass.** Name it "2x Coins", add an icon and
+      description, pick a category, create.
+
+- [ ] **Set its price — this is a separate step.** Back on Monetization → Passes,
+      hover the pass → menu button → **Sales** → enable **Item for Sale** → price
+      **1** Robux → **Save Changes**.
 
       A pass that isn't explicitly put on sale cannot be purchased, and the failure is
-      silent.
+      silent — it reads as a code bug.
 
-- [ ] **Developer Products → Create.** Make two, priced at **1 Robux** each:
-      one named "100 Coins", one named "500 Coins".
+- [ ] **Monetization → Developer Products → Create developer product.** Make two,
+      named "100 Coins" and "500 Coins". Unlike passes, **price is set at creation** —
+      1 Robux each.
+
+- [ ] **Collect the four IDs:** hover an item's thumbnail → **⋯** → **Copy Asset ID**.
 
 Price them at 1 Robux purely so self-testing is free in practice. Note you'll earn
 **0** Robux back from a 1-Robux sale — the 70% share rounds down to zero. That's
