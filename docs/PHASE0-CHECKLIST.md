@@ -119,9 +119,23 @@ Now verify each of these. **This is the actual test — don't skim it.**
 - [ ] A coin counter sits top-left; it reads `0 coins`, not `loading...`
 - [ ] Clicking the cube increments the counter
 - [ ] The on-screen **CLICK** button also increments it
-- [ ] **Hold the click button down.** The counter should climb at roughly **6–7 per
-      second and no faster**. If it climbs hundreds per second, the rate limiter is
-      not working — stop and tell me.
+- [ ] **Verify the rate limiter.** Holding the button does nothing — `Activated`
+      fires once per press and there is no auto-repeat — and hand-tapping can't
+      exceed the ~6.7/sec cap anyway, so neither proves anything.
+
+      The threat is a script firing the remote in a loop, so test that. During a
+      playtest, open **View → Command Bar** (server context, the default) and run:
+
+          local p = game:GetService("Players"):GetPlayers()[1]
+          local E = require(game:GetService("ServerScriptService").Server.EconomyService)
+          for i = 1, 100 do E.handleClick(p) end
+
+      - Counter rises by **~1** → working. All 100 calls fell inside one 0.15s
+        window; one honored, 99 dropped.
+      - Counter rises by **~100** → the limiter is broken. Stop and report it.
+
+      Run it a few times and Output should eventually show
+      `[Economy] ... exceeded click rate limit`, confirming the suspicion counter.
 - [ ] **SHOP** opens a panel with three buttons. Clicking them logs a warning about
       unconfigured IDs — that is correct behavior at this stage, not a bug.
 
