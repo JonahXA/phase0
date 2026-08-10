@@ -28,7 +28,8 @@ rokit install
 
 That pulls Rojo 7.7.0, StyLua 2.5.2, and Selene 0.31.0 at the pinned versions.
 
-Verify:
+Verify — **from inside the repo**, since Rokit scopes tools to the nearest
+`rokit.toml` and will report `Failed to find tool 'rojo'` anywhere else:
 
 ```bash
 rojo --version

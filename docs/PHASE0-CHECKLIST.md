@@ -28,12 +28,25 @@ it, so kick it off and carry on.
 - [ ] **Open a NEW terminal.** The Rokit install added `~/.rokit/bin` to PATH, but any
       terminal opened before that won't have it.
 
+- [ ] **Change into the repo — every command in this document assumes it.**
+
+      cd C:\Users\Jonah\roblox\phase0
+
+      Rokit resolves tools from the nearest `rokit.toml`, so that different projects
+      can pin different versions. Outside a project folder it refuses to guess.
+
 - [ ] Verify the tools resolve:
 
       rojo --version
 
-      Expect `Rojo 7.7.0`. If it says "not recognized", the PATH change hasn't taken —
-      close every terminal and open a fresh one.
+      Expect `Rojo 7.7.0`. Two different failures, two different causes:
+
+      - `Failed to find tool 'rojo' in any project manifest file`
+        → Rokit is working, you're just not in the repo. Re-run the `cd` above.
+
+      - `'rojo' is not recognized as an internal or external command`
+        → PATH hasn't picked up `~/.rokit/bin`. Close every terminal and open a
+          fresh one.
 
 - [ ] **Install the Rojo Studio plugin.**
       Studio → **Toolbox** → **Creator Store** → filter to **Plugins** → search "Rojo"
@@ -66,7 +79,8 @@ it, so kick it off and carry on.
 
 ## 3. Pass 1 — prove the loop (leave the monetization IDs at `0`)
 
-- [ ] From the repo root, start the sync server and **leave it running**:
+- [ ] From the repo root (`cd C:\Users\Jonah\roblox\phase0` if you opened a new
+      terminal), start the sync server and **leave it running**:
 
       rojo serve
 
