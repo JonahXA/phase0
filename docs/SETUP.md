@@ -14,7 +14,7 @@ The repo pins tool versions in `rokit.toml` so the build is reproducible. Rokit 
 the toolchain manager (successor to Aftman).
 
 Install Rokit from <https://github.com/rojo-rbx/rokit/releases> — grab
-`rokit-<version>-windows-x86_64.zip`, extract `rokit.exe`, then:
+`rokit-1.2.0-windows-x86_64.zip` (~3.6 MB), extract `rokit.exe`, then:
 
 ```bash
 rokit self-install
@@ -26,7 +26,7 @@ Then from the repo root:
 rokit install
 ```
 
-That pulls Rojo 7.5.1, StyLua, and Selene at the pinned versions.
+That pulls Rojo 7.7.0, StyLua 2.5.2, and Selene 0.31.0 at the pinned versions.
 
 Verify:
 
